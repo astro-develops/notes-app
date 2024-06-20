@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-[#f3f1f2] ${inter.className}`}>
         <Nav/>
-        {children}</body>
+        <div className="flex justify-end">
+        {children}
+        </div></body>
     </html>
   );
 }

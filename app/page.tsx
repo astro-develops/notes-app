@@ -5,8 +5,8 @@ import Head from "next/head";
 
 import dynamic from "next/dynamic";
 
-const ReactQuillEditor = dynamic(
-  () => import("@/components/react-quill-editor"),
+const Editor = dynamic(
+  () => import("@/components/editor"),
   {
     ssr: false,
   }
@@ -17,9 +17,10 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-    <main className="flex justify-end m-24 h-50">
-    <div className="bg-[#FFF] text-[#000] border-none rounded-lg w-4/5">
-      <ReactQuillEditor />
+    <main className="flex justify-end h-screen w-4/5">
+      
+    <div className="text-[#000] rounded-lg w-full">
+      <Editor />
       </div>
       </main>
     </>
