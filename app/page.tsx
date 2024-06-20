@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
     <main className="flex justify-end m-24 h-50">
-    <div className="bg-[#FFF] text-[#000] rounded-lg w-4/5">
+    <div className="bg-[#FFF] text-[#000] border-none rounded-lg w-4/5">
       <ReactQuillEditor />
       </div>
       </main>
