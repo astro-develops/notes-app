@@ -15,7 +15,7 @@ export default function Nav() {
               href="./"
               className="text-sm font-medium flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
             >
-                <p className="">Text Area</p>
+                <p className="">Doc 1</p>
             </a>
           </li>
         </ul>
