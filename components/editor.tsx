@@ -6,11 +6,26 @@ import "react-quill/dist/quill.snow.css";
 // } from "@/components/types/react-quill";
 // import Quill from "quill";
 import Load from "./load";
-import { modules, formats } from "./types/pref"
+import { modules, formats } from "./types/pref";
 
 import { useEffect, useRef, useState } from "react";
 import QuillComponent, { ReactQuillProps } from "react-quill";
 // const Delta = Quill.import("delta");
+
+// function getIndicesOf(searchStr: string, str: string) {
+//   var searchStrLen = searchStr.length;
+//   if (searchStrLen == 0) {
+//     return [];
+//   }
+//   var startIndex = 0,
+//     index,
+//     indices = [];
+//   while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+//     indices.push(index);
+//     startIndex = index + searchStrLen;
+//   }
+//   return indices;
+// }
 
 const ReactQuill = (
   typeof window === "object" ? require("react-quill") : () => false
@@ -24,7 +39,20 @@ export default function Editor() {
 
   const [doc, getdoc] = useState("");
 
-  const saveToLocalStorage = (newValue:any) => {
+  //   let arr = [];
+
+  let value: any;
+  if (typeof window !== "undefined") {
+    value = localStorage.getItem("doc") || "";
+  }
+
+  //   for (let i = 0; i < words.length; i++) {
+  //     arr.push(getIndicesOf(words[i], value));
+  //   }
+
+  //   console.log(arr);
+
+  const saveToLocalStorage = (newValue: any) => {
     console.log(newValue);
     getdoc(newValue);
     localStorage.setItem("doc", newValue);
@@ -40,7 +68,7 @@ export default function Editor() {
       defaultValue={Load()}
       placeholder="Compose an epic..."
       onChange={(newValue: string) => {
-        saveToLocalStorage(newValue)
+        saveToLocalStorage(newValue);
       }}
     />
   );
